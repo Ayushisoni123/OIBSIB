@@ -1,0 +1,65 @@
+import java.util.Scanner;
+//public class atm_mac to implement ATM interface
+public class ATM_MAC 
+{
+      //main method begins 
+public static void main(String args [])
+{
+    //declare and  initiate balance,withdraw and deposit
+    int balance =0,withdraw,deposit;
+    // create Scanner class object to get choice of user
+    Scanner sc=new Scanner(System.in);
+    while(true)
+    {
+    System.out.println("ATM Machine\n");
+   System.out.println("choose 1 for withdraw ");
+   System.out.println("choose 2 for Deposit ");
+  System.out.println("choose 3 for check balance ");
+    System.out.println("choose 4 for EXIT\n ");
+       System.out.println("choose int the operation ");
+       int choice=sc.nextInt();
+       switch(choice)
+       { 
+           case 1:
+    System.out.println("Enter money to be withdrawn ");
+    // amount to be withdrawn by the user
+    withdraw =sc.nextInt();
+    //check whether balance is greater than or equal to withdrawl amount
+    if(balance>=withdraw)
+  {
+    // remoe  the withdrawl amount from the total balance
+    balance =balance-withdraw;
+       System.out.println("PLEASE COLLECT YOUR MONEY");
+       }
+       else
+       {
+           // balance error message
+     System.out.println("insufficient balance ");
+      }
+     System.out.println("");
+     break;
+    
+     case 2:
+      System.out.println("Enter money to be deposited ");
+      //get deposite amount from the user 
+      deposit = sc.nextInt();
+      //add deposit amount to the the total balance
+      balance = balance-deposit;
+      System.out.println("Your  money is successfully  deposited ");
+        System.out.println(" ");
+        break;
+        
+        case 3:
+            //display total balance
+     System.out.println("Balance :" + balance);
+           System.out.println("");
+           break;
+           
+           case 4:
+               //EXIT
+               System.exit(0);
+               
+    }
+}
+    
+}   }
